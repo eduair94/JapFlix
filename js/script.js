@@ -31,7 +31,13 @@ const compare_genre = (val, search) => {
 
 const mark_text = (text, mark) => {
     const mRegex = new RegExp(mark, 'gi');
-    return text.replace(mRegex, `<span class="bg-warning">${mark}</span>`);
+    const txt = text.match(mRegex);
+    if(txt && txt.length) {
+        for(let e of txt) {
+            text = text.replace(e, `<span class="bg-warning">${e}</span>`);
+        }
+    }
+    return text;
 }
 
 const addData = function ({title, overview, genres, budget, revenue, runtime, release_date}, valX){
