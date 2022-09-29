@@ -74,8 +74,7 @@ const search = (val, add_space = true) => {
             }
         });
         elements.list.appendChild(element);
-    } 
-
+    }
 }
 
 elements.form.addEventListener('submit', (e) => {
